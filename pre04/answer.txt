@@ -1,0 +1,67 @@
+Exercise 1  
+Logical operators can simplify nested conditional statements. For example, can you rewrite this code using a single if statement?
+
+if (x > 0) {
+    if (x < 10) {
+        System.out.println("positive single digit number.");
+    }
+}
+
+Answer:
+
+if (x > 0 and x < 10) {
+    
+    System.out.println("positive single digit number.");
+    
+}
+------------------------------------------------------------------------------------
+Exercise 2   For the following program:
+Draw a stack diagram that shows the state of the program the second time zoop is invoked.
+
+What is the complete output?
+
+public static void zoop(String fred, int bob) {
+    System.out.println(fred);
+    if (bob == 5) {
+        ping("not ");
+    } else {
+        System.out.println("!");
+    }
+}
+
+public static void main(String[] args) {
+    int bizz = 5;
+    int buzz = 2;
+    zoop("just for", bizz); //5
+    clink(2 * buzz); //2*2 = 4
+}
+public static void clink(int fork) {
+    System.out.print("It's ");
+    zoop("breakfast ", fork);
+}
+
+public static void ping(String strangStrung) {
+    System.out.println("any " + strangStrung + "more ");
+}
+
+clink[zoop["breakfast ", 4]]
+
+Complete output:
+just for 
+any not more 
+It's breakfast
+!
+
+---------------------------------------------------------------------------------------
+Exercise 3  
+Draw a stack diagram that shows the state of the program in Section 5.8 after main invokes nLines with the parameter n == 4, just before the last invocation of nLines returns.
+
+public static void nLines(int n) {
+    if (n > 0) {
+        System.out.println();
+        nLines(n - 1);
+    }
+}
+
+nLines[nLines[nLines[nLines[nLines[0]]]]]
+

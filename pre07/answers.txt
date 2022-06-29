@@ -1,0 +1,39 @@
+Exercise 2   The purpose of this exercise is to practice reading code and recognizing the traversal patterns in this chapter. The following methods are hard to read, because instead of using meaningful names for the variables and methods, they use names of fruit.
+For each method, write one sentence that describes what the method does, without getting into the details of how it works. For each variable, identify the role it plays.
+
+public static int banana(int[] a) {
+    int kiwi = 1;
+    int i = 0;
+    while (i < a.length) {
+        kiwi = kiwi * a[i];
+        i++;
+    }
+    return kiwi;
+}
+
+answer:
+banana takes an array of integers and returns the product of all the elements
+
+public static int grapefruit(int[] a, int grape) {
+    for (int i = 0; i < a.length; i++) {
+        if (a[i] == grape) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+answer:
+grapefruit takes an array of integers and a second integer value and returns the index element if it matches with the second integer value, otherwise -1
+
+public static int pineapple(int[] a, int apple) {
+    int pear = 0;
+    for (int pine: a) {
+        if (pine == apple) {
+            pear++;
+        }
+    }
+    return pear;
+}
+answer:
+pineapple takes an array of integers and a second integer value and returns the number of times the second integer appears in the array (a counter for apple)
