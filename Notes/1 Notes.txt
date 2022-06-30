@@ -1,0 +1,4 @@
+Immediate if or the Conditional Operator
+
+String someString = (x > 1000) ? "a big number!" : "a small number";
+

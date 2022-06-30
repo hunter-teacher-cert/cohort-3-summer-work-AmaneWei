@@ -15,5 +15,7 @@ public class Celsius {
 
         fahrenheit = ((celsius * 9)/5) + 32;
         System.out.println("The degree in Fahrenheit is " + fahrenheit);
+
+        //System.out.printf(celsius + "C = %.1f", fahrenheit);
     }
 }
