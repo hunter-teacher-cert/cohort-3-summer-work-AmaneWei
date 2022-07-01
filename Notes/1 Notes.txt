@@ -2,3 +2,12 @@ Immediate if or the Conditional Operator
 
 String someString = (x > 1000) ? "a big number!" : "a small number";
 
+stringName.charAt(int) 
+
+-------------
+You should all be able to register today. If you are not registered for all three courses you should get an email from Cassandra with specifics.
+Could you please all at some point around lunchtime:
+check to  make sure you're registered for all three classes
+If you aren't try to register for whatever you're missing (Cassandra's email will have the sections
+If there are problems after that email edadmissions@hunter.cuny.edu with specifics and cc me.
+Also, if you have ANY other registration issues please email the office inquestion (like Wellness  for immunization stuff) and CC edadmissions@hunter.cuny.edu and me.
