@@ -1,7 +1,7 @@
 /**
  * ArrayPractice by Team BossCoders
  * Amanda Lee
- * collaborators: First Last, First Last
+ * collaborators: (Group 7) Adam, SuAnn, Christine 
  */
 
 /**
