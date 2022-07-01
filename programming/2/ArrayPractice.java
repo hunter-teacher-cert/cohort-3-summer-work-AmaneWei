@@ -269,6 +269,20 @@ public class ArrayPractice
         data[i] = data[data.length - i - 1];
         data[data.length - i - 1] = temp;
     }
+
+    /*
+
+    int[] newArray = new int[data.length]
+
+    for (int i = 0; i<data.length; i++) {
+        newArray[i] = data[data.length - i - 1];
+    }
+
+    for (int i = 0; i < newArray.length; i++) {
+        data[i] = newArray[i];
+    }
+
+    */
   }
 
 
