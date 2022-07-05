@@ -178,6 +178,16 @@ public class Array2DPractice
   public static void explodeSquare( char[][] board, int row, int col )
   {
     /* YOUR AWESOME CODE HERE */
+      char x = 'X';
+      board[row][col-1] = x;
+      board[row][col+1] = x;
+      board[row-1][col-1] = x;
+      board[row-1][col] = x;
+      board[row-1][col+1] = x;
+      board[row+1][col-1] = x;
+      board[row+1][col] = x;
+      board[row+1][col+1] = x;
+          
   }
 
   /**
@@ -272,6 +282,10 @@ public class Array2DPractice
 
     System.out.println("\nCopy of b board");
     char[][] copyB = copyBoard(b);
+    printBoard(copyB);
+
+    System.out.println("\nExplode at (3,5)");
+    explodeSquare(copyB, 3, 5);
     printBoard(copyB);
   }
 }
