@@ -203,7 +203,7 @@ public class Array2DPractice
           
   }
 
-  /**
+   /**
      This method will search through the 2D array board and it will
      explode each square that contains the char c (using the above
      definition of exploding).
@@ -211,6 +211,19 @@ public class Array2DPractice
      Example:
 
      Given the array
+
+     qqzqq
+     qqqqq
+     qqqqq
+     qqqqq
+     qzqqq
+     qqqqq
+     qqqqz
+
+     ...
+     explodeAllchar(board,'z')
+     will change board to
+
      qXzXq
      qXXXq
      qqqqq
@@ -219,11 +232,18 @@ public class Array2DPractice
      XXXXX
      qqqXz
 
-     explodeAllchar(board,'z') will change board to:
   */
   public static void explodeAllChar(char[][] board, char c)
   {
     /* YOUR AWESOME CODE HERE */
+      for (int i = 0; i < board.length; i++) {
+          for (int j = 0; j < board[i].length; j++) {
+            if (board[i][j] == c) {
+                // System.out.println("It matches!");
+                explodeSquare(board, i, j);
+            }
+          }
+      }
   }
 
 
@@ -300,5 +320,16 @@ public class Array2DPractice
     System.out.println("\nExplode at (3,5)");
     explodeSquare(copyB, 3, 5);
     printBoard(copyB);
+
+    char[][] board = buildBoard(5,5,'O');
+    board[1][1] = 'Z';
+    board[3][4] = 'Z';
+    System.out.println("\nBelow is the board for explode char");
+    printBoard(board);
+
+    System.out.println("\nExplode char Z");
+    explodeAllChar(board, 'Z');
+    printBoard(board);
+    
   }
 }
