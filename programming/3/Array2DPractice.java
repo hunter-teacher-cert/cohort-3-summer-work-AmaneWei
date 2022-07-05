@@ -179,14 +179,27 @@ public class Array2DPractice
   {
     /* YOUR AWESOME CODE HERE */
       char x = 'X';
-      board[row][col-1] = x;
-      board[row][col+1] = x;
-      board[row-1][col-1] = x;
-      board[row-1][col] = x;
-      board[row-1][col+1] = x;
-      board[row+1][col-1] = x;
-      board[row+1][col] = x;
-      board[row+1][col+1] = x;
+      
+      // board[row][col-1] 
+      // board[row][col+1] 
+      
+      // board[row-1][col-1] 
+      // board[row-1][col] 
+      // board[row-1][col+1] 
+      
+      // board[row+1][col-1] 
+      // board[row+1][col] 
+      // board[row+1][col+1] 
+
+      for (int i = 0; i < board.length; i++) {
+          for (int j = 0; j < board[i].length; j++) {
+              if ((i <= row + 1 && i >= row - 1) && 
+                  (j <= col + 1 && j >= col -1) && 
+                  (i != row || j != col)) {
+                  board[i][j] = x;
+              }
+          }
+      }
           
   }
 
