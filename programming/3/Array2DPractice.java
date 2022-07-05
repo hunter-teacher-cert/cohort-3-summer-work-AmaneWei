@@ -292,7 +292,11 @@ public class Array2DPractice
   */
   public static void downString( char[][] board, int row, int col, String word )
   {
+      int len = word.length();
     /* YOUR AWESOME CODE HERE */
+      for (int i = 0; i < len; i++) {
+          board[row + i][col] = word.charAt(i);
+      }
   }
 
 
@@ -330,6 +334,9 @@ public class Array2DPractice
     System.out.println("\nExplode char Z");
     explodeAllChar(board, 'Z');
     printBoard(board);
-    
+
+    System.out.println("\ndownString cat");
+    downString(board, 1,1, "cat");
+    printBoard(board);
   }
 }
