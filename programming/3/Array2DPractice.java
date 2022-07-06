@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * Array2DPractice by Team LucidThinkeren
  * Amanda Lee
- * collaborators: First Last, First Last
+ * collaborators: Aasine, Alana, Sam
  */
 
 /**
