@@ -16,9 +16,15 @@ public class Reverser
 /*
 
 word = odd
-1 = d
+3 = d
 2 = d + d
-3 = dd + o
+1 = dd + o
+
+okay
+kay + o
+ay + k + o
+y + a + k + o
+yako
 
 */
 
