@@ -45,6 +45,7 @@ public class Time {
     private int minutes;
     private int seconds;
 
+
     // DEFAULT Constructors
     public Time() {
     	hours = 0;
@@ -96,17 +97,17 @@ public class Time {
     */
 
 
-    public void set(int hrs, int mins, int secs){
+    public void set(int hours, int minutes, int seconds){
 	// add the code to add the time represented by other
 	// to this instance.
-      hours = hrs;
-      minutes = mins;
-      seconds = secs;
+      this.hours = hours;
+      this.minutes = minutes;
+      this.seconds = seconds;
     }
 
   
-    // I like writing modifers in seperate methods
-    // modifer
+    // I like writing setters in seperate methods
+    // setters
     public void setHours(int h) {
       hours = h;
     }
@@ -142,14 +143,19 @@ public class Time {
     public void add(Time other){
 	// add the code to add the time represented by other
 	// to this instance.
-      int sumH = hours + other.getHours();
-      int sumM = minutes + other.getMinutes();
-      int sumS = seconds + other.getSeconds();
+      hours = hours + other.getHours();
+      minutes = minutes + other.getMinutes();
+      seconds = seconds + other.getSeconds();
 
-      if (sumH > 24) {
-        sumH = 
+      int sum = (hours * 3600) + (minutes * 60) + seconds;
+
+      seconds = sum % 60;
+      hours = sum / 60;
+      minutes = hours % 60;
+      hours /= 60;
+      
       }
-    }
+    
 
 
     /**
@@ -160,11 +166,11 @@ public class Time {
        True if this instance and other represents the same time
        false otherwise.
     */
-    public boolean equals(Time other){
-	// your code here)
+ //    public boolean equals(Time other){
+	// // your code here)
 
-	return false; // change this
-    }
+	// return false; // change this
+ //    }
 
     /**
        Parameters:
@@ -180,11 +186,11 @@ public class Time {
        0 if the two instances represent the same time.
 
     */
-    public int compareTo(Time other){
-	// your code here)
+ //    public int compareTo(Time other){
+	// // your code here)
 
-	return 0; // change this
-    }
+	// return 0; // change this
+ //    }
     
 
     
