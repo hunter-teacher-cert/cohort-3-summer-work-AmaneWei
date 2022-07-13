@@ -159,8 +159,8 @@ public class SuperArray
     if (index >= numberElements || index < 0)
       System.out.println("Cannot find element to remove at index "+ index);
     else {
-      for (int i = index; i < numberElements; i++) { // i = 1, i < 3
-        if (i != numberElements-1)
+      for (int i = index; i < numberElements-1; i++) { // i = 1, i < 3
+        // if (i != numberElements-1)
           data[i] = data[i+1];
       }
       data[numberElements-1] = 0;
