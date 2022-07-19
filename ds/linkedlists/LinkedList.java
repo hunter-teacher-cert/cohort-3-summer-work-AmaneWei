@@ -210,5 +210,27 @@ public class LinkedList{
   "a"->"b"->"d"->"e"
   */
   public void remove(int index){
+    int counter = 0;
+    int len = size();
+    Node worker = head;
+    Node target;
+
+    while (worker != null) {
+      if (index == 0) {
+        head = worker.getNext();
+        break;
+      }
+      else if (counter == index-1) {
+        target = worker.getNext();
+        worker.setNext(target.getNext());
+        break;
+      }
+      else if (index < 0 || index > len-1) {
+        System.out.println("Invalid index!");
+      }
+
+      counter ++;
+      worker = worker.getNext();
+    }
   }
 }

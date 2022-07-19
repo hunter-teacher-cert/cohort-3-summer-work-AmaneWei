@@ -4,7 +4,7 @@ import java.util.*;
 public class Driver{
   public static void main(String[] args) {
     LinkedList l = new LinkedList();
-    
+    System.out.println("Created empty LinkedList");
     System.out.println(l);
 
     l.add("Hello");
@@ -43,5 +43,14 @@ public class Driver{
     for(int i = 0; i < test.length; i++) {
       System.out.print(test[i] + " ");
     }
+    System.out.println();
+
+    l.remove(0);
+    System.out.println("\nTesting .remove(0) method");
+    System.out.println(l);
+
+    l.remove(2);
+    System.out.println("\nTesting .remove(2) method");
+    System.out.println(l);
   }
 }
