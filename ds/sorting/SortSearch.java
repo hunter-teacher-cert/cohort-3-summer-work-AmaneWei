@@ -37,18 +37,18 @@ public class SortSearch{
 
     
     public SortSearch(){
-	data = new ArrayList<Integer>();
-	r = new Random();
-	for (int i=0;i<15;i++){
+    	data = new ArrayList<Integer>();
+    	r = new Random();
+    	for (int i=0;i<15;i++){
 	    data.add(r.nextInt(20));
 	}
 	
     }
     
     public SortSearch(int size){
-	data = new ArrayList<Integer>();
-	r = new Random();
-	for (int i=0;i<size;i++){
+    	data = new ArrayList<Integer>();
+    	r = new Random();
+    	for (int i=0;i<size;i++){
 	    data.add(r.nextInt(20));
 	}
 	
@@ -56,7 +56,7 @@ public class SortSearch{
 
     /* Convenience function to get data out of the ArrayList from the driver */
     public int get(int index){
-	return this.data.get(index);
+	    return this.data.get(index);
     }
     
 
@@ -77,9 +77,14 @@ public class SortSearch{
       
     */
     public int findSmallestIndex(int start){
-	int smallIndex = start;
-	
-	return smallIndex;
+    	int smallIndex = start;
+
+      for (int i = start; i < data.size(); i++) {
+        if (data.get(i) < data.get(smallIndex)) {
+          smallIndex = i;
+        }
+      }
+    	return smallIndex;
     }
 
 
@@ -90,15 +95,53 @@ public class SortSearch{
        Algorithm:
        Loop a variable that represents the ArrayList index from
        0 to the end of the ArrayList.
-         For each index, find the smallest from that Location
+      For each index, find the smallest from that Location
 	 to the end of the array and swap it with that index.
 
 	 
        
 
     */
-    public void sort(){
 
+    // basically a selection sort
+    public void sort(){
+      // int smallestNum = 0;
+      // int smallestIndex = 0;
+
+      
+      // for (int i = 0; i < data.size(); i++){
+          
+      //   smallestNum = data.get(i);
+      //   smallestIndex = i;
+        
+      //   for (int j = i+1; j < data.size(); j++){
+      //     if (smallestNum > data.get(i)){
+      //       smallestNum = data.get(i);
+      //       smallestIndex = i;
+      //     }
+      //   }
+    
+      //   if (smallestIndex == i) 
+      //     ;
+      //   else {
+      //     int temp = data.get(i);
+      //     data.set(i, data.get(smallestIndex));
+      //     data.set(smallestIndex, temp);
+      //   }
+      // }
+
+      int len = data.size();
+
+      for (int i = 0; i < len - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < len; j++) 
+          if (data.get(j) < data.get(minIndex))
+            minIndex = j;
+
+        int temp = data.get(minIndex);
+        data.set(minIndex, data.get(i));
+        data.set(i, temp);
+      }
 
     }
 
@@ -119,7 +162,7 @@ public class SortSearch{
     public int linearSearch(int value){
 	
 	
-	return 0; // replace this return
+	    return 0; // replace this return
     }
     
     /**
@@ -134,7 +177,7 @@ public class SortSearch{
 	//   if the item is at data.get(middle), return middle
 	//   otherwise, update high, low, and middle
 
-	return 0;
+	    return 0;
 	    
     }
     
@@ -148,18 +191,18 @@ public class SortSearch{
 
 	// refer to class discussion
 	
-	return 0;
+	    return 0;
 	    
     }
     
 	
     public String toString(){
-	return ""+data;
+	    return ""+data;
     };
 
 
     public void builtinSort(){
-	Collections.sort(data);
+	    Collections.sort(data);
 	
     }
     
