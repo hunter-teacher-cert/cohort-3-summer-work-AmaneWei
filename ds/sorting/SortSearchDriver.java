@@ -10,7 +10,7 @@ public class SortSearchDriver {
   	//SortSearch ss = new SortSearch(size);
   	//System.out.println(ss);
   	
-  	for(int size = 10000; size <= 10000000; size*=10){
+  	for (int size = 100; size <= 10000000; size*=10){
       SortSearch ss = new SortSearch(size);
 
       long start = System.currentTimeMillis();
