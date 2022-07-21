@@ -58,8 +58,13 @@ public class SortSearch{
     public int get(int index){
 	    return this.data.get(index);
     }
-    
 
+    //return size of ArrayList
+    public int getSize() {
+      return data.size();
+    }
+    
+  
 
     /*
       return the index of the smallest data idem from index start to the end
@@ -160,9 +165,17 @@ public class SortSearch{
 
     */
     public int linearSearch(int value){
+      for(int i = 0; i < data.size(); i++)
+      {
+        if (data.get(i) == value)
+        {
+          return i;
+        }
+        
+      } // ends the for loop
 	
 	
-	    return 0; // replace this return
+	    return -1; // return if not found
     }
     
     /**
@@ -171,13 +184,29 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
     public int binarySearch(int value){
+      // create assign variables  representing the high, low and middle indices 
+      int low = 0;
+      int high = data.size() - 1;
+      int middle = (low + high) / 2;
+  	// while we're not done:
+  	//   if the item is at data.get(middle), return middle
+      while (low <= high){
+        if (data.get(middle) == value){
+          return middle;
+        }
+        //   otherwise, update high, low, and middle
+        else if (value > data.get(middle)){
+          low = middle + 1;
+          middle = (low + high) / 2;
+          // high is unchanged
+        } else {
+          high = middle - 1;
+          middle = (low + high) / 2;
+          // low is unchanged
+        }
+      }
+	    return -1;
 
-	// create assign variables  representing the high, low and middle indices 
-	// while we're not done:
-	//   if the item is at data.get(middle), return middle
-	//   otherwise, update high, low, and middle
-
-	    return 0;
 	    
     }
     
@@ -188,10 +217,18 @@ public class SortSearch{
     */
 
     public int binarySearchRecursive(int value, int lowIndex, int highIndex){
-
-	// refer to class discussion
-	
-	    return 0;
+      int middle = (lowIndex + highIndex) / 2;
+      if (lowIndex > highIndex ){
+        return -1;
+      } else {
+        if (data.get(middle) == value){
+          return middle;
+        } else if (value > data.get(middle)){
+          return binarySearchRecursive(value, middle + 1, highIndex);
+        } else {
+          return binarySearchRecursive(value, lowIndex, middle - 1);
+        }
+      }
 	    
     }
     
